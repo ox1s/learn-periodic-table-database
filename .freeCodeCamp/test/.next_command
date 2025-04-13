@@ -1,0 +1,130 @@
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "$HISTCONTROL" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+psql --username=freecodecamp --dbname=periodic_table
+chmod +x insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+./insert_data.sh
+mkdir periodic_table
+cd periodic_table/
+git init
+git branch
+git branch main
+git checkout -b main
+git branch
+git status
+pg_dump -cC --inserts -U freecodecamp periodic_table > periodic_table.sql
+git status
+git add periodic_table.sql
+git commit -m "feat: add database"
+git status
+git log
+touch element.sh
+chmod +x element.sh
+echo "Please provide an element as an argument." > element.sh
+./element.sh
+./element.sh
+git status
+git add .
+git commit -m "feat: add element.sh script"
+./element.sh 1
+./element.sh 1
+./element.sh 1
+./element.sh 1
+./element.sh 1
+./element.sh N
+./element.sh Hydrogen
+./element.sh Hydrogen
+./element.sh Hydrogen
+./element.sh Hydrogen
+./element.sh Hydrogen
+./element.sh Hydrogen
+./element.sh Hy
+./element.sh Hy
+./element.sh H
+./element.sh H
+./element.sh H
+./element.sh H
+./element.sh He
+./element.sh Hydrogen
+./element.sh Hydrogen
+./element.sh H
+./element.sh He
+./element.sh L
+git add .
+git commit -m "test: basic input works"
+git status
+git log --oneline
+git log --oneline
+./element.sh L
+./element.sh L
+./element.sh Li
+./element.sh 1
+git add .
+git commit -m "feat: all of features work"
+git log --oneline
+git rebase --interactive HEAD~1
+git rebase --interactive HEAD~5
+git rebase --interactive HEAD~4
+git rebase --interactive --root
+git log --oneline
+git status
+git log --oneline
+pg_dump -cC --inserts -U freecodecamp periodic_table > periodic_table.sql
+git status
+git add .
+git commit -m "fix: delete type column from properties"
+git log --oneline
+pg_dump -cC --inserts -U freecodecamp periodic_table > periodic_table.sql
+git status
+git add .
+git commit -m "fix: delete the non existent element"
+git log --oneline
+pg_dump -cC --inserts -U freecodecamp periodic_table > periodic_table.sql
+git status
+git add .
+git commit -m "fix: delete the non existent element from elements"
+git rebase --interactive --root
+git status
+git log --oneline
